@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Zavolah Design System */
+@layer base {
+  :root {
+    /* Zavolah Brand Colors */
+    --color-green: 152 100% 12%;
+    --color-orange: 11 100% 64%;
+    --color-black: 224 13% 12%;
+    --color-white: 0 0% 100%;
+    
+    /* Light Mode */
+    --background: 0 0% 100%;
+    --foreground: 224 13% 12%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 224 13% 12%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 13% 12%;
+    
+    --primary: var(--color-green);
+    --primary-foreground: var(--color-white);
+    
+    --secondary: var(--color-orange);
+    --secondary-foreground: var(--color-white);
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --accent: var(--color-orange);
+    --accent-foreground: var(--color-white);
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--color-white);
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: var(--color-green);
+    
+    --radius: 0.5rem;
+    
+    /* Zavolah Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--color-orange)), hsl(var(--color-green)));
+    --gradient-accent: linear-gradient(180deg, hsl(var(--color-green) / 0.1), hsl(var(--color-orange) / 0.1));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--color-green) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--color-orange) / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .dark {
+    --background: var(--color-black);
+    --foreground: var(--color-white);
+    
+    --card: var(--color-black);
+    --card-foreground: var(--color-white);
+    
+    --popover: var(--color-black);
+    --popover-foreground: var(--color-white);
+    
+    --primary: var(--color-orange);
+    --primary-foreground: var(--color-black);
+    
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: var(--color-white);
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: var(--color-green);
+    --accent-foreground: var(--color-white);
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: var(--color-white);
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: var(--color-orange);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sofia;
+  }
+}
+
+@layer components {
+  .zavolah-font {
+    font-family: 'Sofia Sans', cursive;
+    font-weight: 700;
+  }
+
+  .zavolah-animation {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: gradientMove 5s linear infinite;
+  }
+
+  .font-sofia {
+    font-family: 'Sofia Sans', sans-serif;
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
