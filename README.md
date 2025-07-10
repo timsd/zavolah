@@ -1,4 +1,4 @@
-# Zavolah Energy Hub
+# Zavolah
 
 A comprehensive renewable energy platform built with React, FastAPI, and Supabase.
 
