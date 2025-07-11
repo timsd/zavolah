@@ -25,7 +25,7 @@ A comprehensive renewable energy platform built with React, FastAPI, and Supabas
 
 ```bash
 git clone <repository-url>
-cd zavolah-energy-hub
+cd zavolah
 ```
 
 ### 2. Install Dependencies
@@ -89,7 +89,7 @@ npm run backend:dev
 ## 📁 Project Structure
 
 ```
-zavolah-energy-hub/
+zavolah/
 ├── src/                    # React frontend
 │   ├── components/         # Reusable UI components
 │   ├── pages/             # Page components
